@@ -1,0 +1,371 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background:linear-gradient(45deg,#CD03F5,#1C0622)
+}
+/**************************************** SCROLL BAR STARTS HERE *****************************************/
+::-webkit-scrollbar {
+    width: 0.6rem;
+}
+::-webkit-scrollbar-track {
+    background: cyan;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(211, 18, 201),rgb(243, 149, 7));
+    border-radius: 0.5rem;
+}
+/**************************************** SCROLL BAR ENDS HERE *****************************************/
+
+/**************************************** NAVBAR STARTS HERE *******************************************/
+.navbar{
+    background-color: #1C0622 !important;
+}
+
+.navbar-brand img{
+    width: 12rem;
+    margin: -3.5rem 0rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-item{
+    padding-left:2.5rem;
+  padding-right:2.5rem;
+}
+
+.active{
+    color: #D52BF7 !important;
+}
+
+.nav-item:hover .nav-link{
+    color: #D52BF7 !important;
+}
+
+#membership{
+    background-color: #CD03F5;
+    font-size: 1.6rem;
+    margin-right: 4rem;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+#membership:hover{
+    background-color: rgb(255, 255, 255);
+    color: #440E59;
+}
+/**************************************** NAVBAR ENDS HERE *****************************************/
+
+/************************************* SONGS SECTION STARTS HERE *************************************/
+#album-name{
+    margin: 3rem 0rem 5rem 0rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+#album-name a{
+    text-decoration: none;
+    color: white;
+}
+
+#album-name a:hover{
+    color: white;
+}
+
+#album-cover img{
+    width: 100%;
+    margin-top: 5.8rem;
+    height: 30rem;
+}
+
+.music-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.songlist{
+    width: 50vw;
+}
+
+.song{
+    height: 6rem;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-bottom: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.4rem;
+    margin-left: 2rem;
+}
+
+.song img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.songlist span{
+    font-weight: 800;
+}
+
+.songName{
+    font-size: 1.5rem;
+    margin-left: 10rem;
+    position: absolute;
+}
+
+.timestamp{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.songs-info{
+    width: 50%;
+    height: auto;
+    float: right;
+    /* padding: 5rem; */
+    box-sizing: border-box;
+}
+
+.songs-info .content{
+  color: white;
+    background-color: rgba(28, 6, 34, 0.644);
+    padding: 4rem;
+    transition: 0.5s;
+    border-radius: 0.3rem;
+    margin: 0 4rem;
+}
+
+.songs-info .content h3{
+  font-size: 2.5rem;
+}
+
+.songs-info .content p{
+  font-size: 1.5rem;
+}
+/***************************************** SONGS SECTION ENDS HERE **********************************/
+
+
+/***************************************** FOOTER SECTION STARTS HERE **********************************/
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5rem 10rem;
+    background-color: rgb(28, 6, 34);
+}
+
+footer .footer-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+footer .footer-container .footer-sec h3{
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+footer .footer-container .footer-sec h3::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 6rem;
+    height: 0.3rem;
+    background-color: rgb(172, 4, 116);
+}
+
+footer .footer-container .footer-sec #foot-about::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 9rem;
+    height: 0.3rem;
+    background-color: rgb(172, 4, 116);
+}
+
+footer .footer-container .footer-sec #foot-quick::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 11rem;
+    height: 0.3rem;
+    background-color: rgb(172, 4, 116);
+}
+
+footer .footer-container .footer-sec #foot-contact::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 11rem;
+    height: 0.3rem;
+    background-color: rgb(172, 4, 116);
+}
+
+footer .footer-container .footer-sec p{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.footer-icons{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 5rem);
+    grid-gap: 1rem;
+    margin-left: -2rem;
+}
+
+.footer-icons li{
+    list-style: none;
+}
+
+.footer-icons li a{
+    transition: 0.2s ease;
+}
+
+.footer-icons li #facebook:hover{
+    background-color: #0e2861;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 4rem 1rem rgb(172, 4, 116);
+}
+
+.footer-icons li #twitter:hover{
+    background-color: #00aced;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 4rem 1rem rgb(172, 4, 116);
+}
+
+.footer-icons li #instagram:hover{
+    background-color: #ea4c89;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 4rem 1rem rgb(172, 4, 116);
+}
+
+.footer-icons li #linkedin:hover{
+    background-color: #0071AE;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 4rem 1rem rgb(172, 4, 116);
+}
+
+.footer-icons li a{
+    display: inline-block;
+    width: 4.8rem;
+    height: 4.8rem;
+    display: grid;
+    background-color: rgb(87, 80, 80);
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.quicklinks{
+    position: relative;    
+}
+
+.quicklinks li{
+    list-style: none;
+    margin-left: -2rem;
+}
+
+.quicklinks li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+.quicklinks li a:hover{
+    transform: translateX(1rem);
+    color: rgb(139, 139, 139);
+}
+
+.footer-info{
+    position: relative;
+}
+
+.footer-info li{
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    margin-bottom: 1rem;
+    margin-left: -5rem;
+}
+
+.footer-info li span:nth-child(1){
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+}
+
+.footer-info li span{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+.footer-info a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.footer-info a:hover{
+    color: rgb(179, 67, 141);
+}
+
+.copyrightText{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 1rem 10rem 0rem 10rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 991px){
+    footer{
+        padding: 4rem;
+    }
+    footer .footer-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .copyrightText{
+        padding: 0.8rem 4rem;    
+    }
+}
+@media (max-width: 991px){
+    footer .footer-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+/***************************************** FOOTER SECTION ENDS HERE*******************************************/

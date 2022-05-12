@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!---------------------------------------BOOTSTRAP CDN------------------------------------------------>
+  <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!---------------------------------------FONT AWESOME CDN------------------------------------------------>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!---------------------------------------GOOGLE FONT LINK------------------------------------------------>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <title>Rhythm House | Music</title>
+
+  <!------------------------------------------FAVICON--------------------------------------------------->
+  <link rel="icon" type="image/png" href="images/fav.png">
+
+  <style>
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background:linear-gradient(45deg,#CD03F5,#1C0622)
+}
+/**************************************** SCROLL BAR STARTS HERE *****************************************/
+::-webkit-scrollbar {
+    width: 0.6rem;
+}
+::-webkit-scrollbar-track {
+    background: cyan;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(211, 18, 201),rgb(243, 149, 7));
+    border-radius: 0.5rem;
+}
+/**************************************** SCROLL BAR ENDS HERE *****************************************/
+
+/**************************************** NAVBAR STARTS HERE *******************************************/
+.navbar{
+    background-color: #1C0622 !important;
+}
+
+.navbar-brand img{
+    width: 12rem;
+    margin: -3.5rem 0rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-item{
+    padding-left:2.5rem;
+  padding-right:2.5rem;
+}
+
+.active{
+    color: #D52BF7 !important;
+}
+
+.nav-item:hover .nav-link{
+    color: #D52BF7 !important;
+}
+
+.dropdown-menu{
+    background-color: #1C0622;
+}
+
+.dropdown-menu a{
+    color: #CD03F5;
+    font-size: 1.6rem;
+    transition: 0.2s;
+}
+
+.dropdown-menu a:hover{
+    background-color: #CD03F5;
+    color: #1C0622;
+}
+
+#membership{
+    background-color: #CD03F5;
+    font-size: 1.6rem;
+    margin-right: 4rem;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+#membership:hover{
+    background-color: rgb(255, 255, 255);
+    color: #440E59;
+}
+/**************************************** NAVBAR ENDS HERE *****************************************/
+
+/************************************* SONGS SECTION STARTS HERE *************************************/
+#album-name{
+    margin: 3rem 0rem 5rem 0rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 0.3rem;
+}
+
+#album-name a{
+    text-decoration: none;
+    color: white;
+}
+
+#album-name a:hover{
+    color: white;
+}
+
+#album-cover img{
+    width: 100%;
+    margin-top: 5.8rem;
+    height: 30rem;
+}
+
+.music-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.songlist{
+    width: 50vw;
+}
+
+.song{
+    height: 6rem;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-bottom: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.4rem;
+    margin-left: 2rem;
+}
+
+.song img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.songlist span{
+    font-weight: 800;
+}
+
+.songName{
+    font-size: 1.5rem;
+    margin-left: 10rem;
+    position: absolute;
+}
+
+.timestamp{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.songs-info{
+    width: 50%;
+    height: auto;
+    float: right;
+    /* padding: 5rem; */
+    box-sizing: border-box;
+}
+
+.songs-info .content{
+  color: white;
+    background-color: rgba(28, 6, 34, 0.644);
+    padding: 4rem;
+    transition: 0.5s;
+    border-radius: 0.3rem;
+    margin: 0 4rem;
+    line-height: 3rem;
+}
+
+.songs-info .content h3{
+  font-size: 2.5rem;
+}
+
+.songs-info .content p{
+  font-size: 1.5rem;
+}
+
+@media (max-width: 991px) {
+      .music-container{
+        display: flex;
+        flex-direction: column;
+      }
+      .music-container .songlist{
+        width: 100%;
+        padding-right: 2rem;
+      }
+      .music-container .songs-info{
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+/***************************************** SONGS SECTION ENDS HERE **********************************/
+
+
+/***************************************** FOOTER SECTION STARTS HERE **********************************/
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5rem 10rem;
+    background-color: rgb(28, 6, 34);
+}
+
+footer .footer-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+footer .footer-container .footer-sec h3{
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+footer .footer-container .footer-sec h3::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 6rem;
+    height: 0.3rem;
+    background-color: rgb(172, 4, 116);
+}
+
+footer .footer-container .footer-sec #foot-about::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 9rem;
+    height: 0.3rem;
+    background-color: rgb(172, 4, 116);
+}
+
+footer .footer-container .footer-sec #foot-quick::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 11rem;
+    height: 0.3rem;
+    background-color: rgb(172, 4, 116);
+}
+
+footer .footer-container .footer-sec #foot-contact::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 11rem;
+    height: 0.3rem;
+    background-color: rgb(172, 4, 116);
+}
+
+footer .footer-container .footer-sec p{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.footer-icons{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 5rem);
+    grid-gap: 1rem;
+    margin-left: -2rem;
+}
+
+.footer-icons li{
+    list-style: none;
+}
+
+.footer-icons li a{
+    transition: 0.2s ease;
+}
+
+.footer-icons li #facebook:hover{
+    background-color: #0e2861;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 4rem 1rem rgb(172, 4, 116);
+}
+
+.footer-icons li #twitter:hover{
+    background-color: #00aced;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 4rem 1rem rgb(172, 4, 116);
+}
+
+.footer-icons li #instagram:hover{
+    background-color: #ea4c89;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 4rem 1rem rgb(172, 4, 116);
+}
+
+.footer-icons li #linkedin:hover{
+    background-color: #0071AE;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 4rem 1rem rgb(172, 4, 116);
+}
+
+.footer-icons li a{
+    display: inline-block;
+    width: 4.8rem;
+    height: 4.8rem;
+    display: grid;
+    background-color: rgb(87, 80, 80);
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.quicklinks{
+    position: relative;    
+}
+
+.quicklinks li{
+    list-style: none;
+    margin-left: -2rem;
+}
+
+.quicklinks li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+.quicklinks li a:hover{
+    transform: translateX(1rem);
+    color: rgb(139, 139, 139);
+}
+
+.footer-info{
+    position: relative;
+}
+
+.footer-info li{
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    margin-bottom: 1rem;
+    margin-left: -5rem;
+}
+
+.footer-info li span:nth-child(1){
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+}
+
+.footer-info li span{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+.footer-info a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.footer-info a:hover{
+    color: rgb(179, 67, 141);
+}
+
+.copyrightText{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 1rem 10rem 0rem 10rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 991px){
+    footer{
+        padding: 4rem;
+    }
+    footer .footer-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .copyrightText{
+        padding: 0.8rem 4rem;    
+    }
+}
+@media (max-width: 991px){
+    footer .footer-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+/***************************************** FOOTER SECTION ENDS HERE*******************************************/
+
+
+  </style>
+</head>
+
+<body>
+  <!------------------------------------NAVBAR STARTS FROM HERE---------------------------------------->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="rhythm.html">
+        <img src="images/Rhytm house logo white.png" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="rhythm.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="album.html">Music</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="album.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Albums
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="rock.html">ROCK</a></li>
+              <li><a class="dropdown-item" href="pop.html">POP</a></li>
+              <li><a class="dropdown-item" href="classic.html">CLASSICAL</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="event.html">Live Shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rhythm.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rhythm.html">About Us</a>
+          </li>
+        </ul>
+        <button id="membership" class="btn btn-success" type="submit"
+          onclick="window.location.href='membership.html';">Membership</button>
+      </div>
+    </div>
+  </nav>
+  <!------------------------------------NAVBAR ENDS HERE---------------------------------------->
+
+  <!------------------------------- SONGS SECTION STARTS HERE ---------------------------------->
+  <section id="album-cover">
+    <img src="images/floyd1.jpg" alt="">
+  </section>
+  <h3 id="album-name"><a href="https://en.wikipedia.org/wiki/The_Dark_Side_of_the_Moon" target="_blank"> Dark Side Of
+      The Moon(ALBUM)</a></h3>
+
+
+  <div class="music-container">
+    <div class="songlist">
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">Any Colour You Like - Pink Floyd</span>
+        <audio src="rock-songs/Any Colour You Like.mp3" controls></audio>
+      </div>
+
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">Brain Damage - Pink Floyd</span>
+        <audio src="rock-songs/Brain Damage.mp3" controls></audio>
+      </div>
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">Eclipse - Pink Floyd</span>
+        <audio src="rock-songs/Eclipse.mp3" controls></audio>
+      </div>
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">Money - Pink Floyd</span>
+        <audio src="rock-songs/Money.mp3" controls></audio>
+      </div>
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">On The Run - Pink Floyd</span>
+        <audio src="rock-songs/On The Run.mp3" controls></audio>
+      </div>
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">Breath(in the air) - Pink Floyd</span>
+        <audio src="rock-songs/Breath(in the air).mp3" controls></audio>
+      </div>
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">Speak To Me - Pink Floyd</span>
+        <audio src="rock-songs/Speak To Me.mp3" controls></audio>
+      </div>
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">Time - Pink Floyd</span>
+        <audio src="rock-songs/Time.mp3" controls></audio>
+      </div>
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">The Great Gig In The Sky - Pink Floyd</span>
+        <audio src="rock-songs/The Great Gig In The Sky.mp3" controls></audio>
+      </div>
+      <div class="song">
+        <img src="images/floyd1.jpg" alt="">
+        <span class="songName">Us And Them - Pink Floyd</span>
+        <audio src="rock-songs/Us And Them.mp3" controls></audio>
+      </div>
+    </div>
+    <!------------------------------ ALBUM INTRO STARTS HERE ----------------------------->
+    <div class="songs-info">
+      <div class="content">
+        <h3>Dark Side Of The Moon(ALBUM) <br> by Pink Floyd:</h3>
+        <hr>
+        <p>The Dark Side of the Moon is the eighth studio album by the English rock band Pink Floyd, released on 1 March
+          1973 by Harvest Records. Primarily developed during live performances, the band premiered an early version of
+          the suite several months before recording began. The record was conceived as an album that focused on the
+          pressures faced by the band during their arduous lifestyle, and dealing with the apparent mental health
+          problems suffered by former band member Syd Barrett, who departed the group in 1968. New material was recorded
+          in two sessions in 1972 and 1973 at Abbey Road Studios in London.
+          The record builds on ideas explored in Pink Floyd's earlier recordings and performances, while omitting the
+          extended instrumentals that characterised their earlier work. The group employed multitrack recording, tape
+          loops, and analogue synthesisers, including experimentation with the EMS VCS 3 and a Synthi A. Engineer Alan
+          Parsons was responsible for many sonic aspects and the recruitment of singer Clare Torry, who appears on "The
+          Great Gig in the Sky".</p>
+      </div>
+    </div>
+    <!------------------------------ ALBUM INTRO ENDS HERE ----------------------------->
+  </div>
+  <!------------------------------- SONGS SECTION ENDS HERE ---------------------------------->
+
+
+  <!----------------------------------------- FOOTER STARTS HERE ------------------------------------------>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-sec footer-about">
+        <h3 id="foot-about">About Us</h3>
+        <p>'Rhythm House' is a music store in the city which offers music and live shows.It caters to almost all the
+          age groups by providing the CDs, Cassettes, latest pop music collection for teenagers etc.Rhythm House also
+          caters to a slightly older age group by 70's rock albums.</p>
+        <ul class="footer-icons">
+          <li><a href="https://www.facebook.com/" id="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li><a href="https://twitter.com/?lang=en" id="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/" id="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li><a href="https://www.linkedin.com/signup" id="linkedin" target="_blank"><i
+                class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-sec quicklinks">
+        <h3 id="foot-quick">Quick Links</h3>
+        <ul>
+          <li><a href="album.html">Music</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="event.html">Live Concerts</a></li>
+          <li><a href="rhythm.html">Contact us</a></li>
+          <li><a href="rhythm.html">Home</a></li>
+        </ul>
+      </div>
+      <div class="footer-sec">
+        <h3 id="foot-contact">Contact Us</h3>
+        <ul class="footer-info">
+          <li>
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <span> A-486 Allama Shabbir Ahmed Usmani Rd, Block 6 Gulshan-e-Iqbal, Karachi, Karachi</span>
+          </li>
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span>
+            <p><a href="#">0900-78601</a><br>
+              <a href="#">1112-44-622</a>
+            </p>
+          </li>
+          <li>
+            <span><i class="fa-solid fa-envelope"></i></span>
+            <p><a href="https://accounts.google.com">basim925@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <div class="copyrightText">
+    <p>Copyright ©2020 All rights reserved by:
+      <a href="#" style="text-decoration: none; color: rgb(172, 4, 116);">RhythmHouse</strong>
+      </a>
+    </p>
+  </div>
+  <!----------------------------------------- FOOTER ENDS HERE ----------------------------------------------->
+
+  <!------------------------------------------BOOTSTRAP JS CDN------------------------------------------------>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>
